@@ -4,7 +4,7 @@ from GeniaTaggerClient import GeniaTaggerClient
 print("started")
 tagger = GeniaTaggerClient()
 while True:
-    userInput = input("give ur input: ")
+    userInput = input("give ur input: \n")
     if userInput == "e":
         break
     tagger.send_message(userInput)

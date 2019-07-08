@@ -25,7 +25,7 @@ class GeniaTaggerClient:
         self.__init_reader()
 
     def __init_subprocess(self):
-        path_to_tagger = 'C:/Users/beko/geniatagger-3.0.2/geniatagger.exe'
+        path_to_tagger = 'geniatagger-3.0.2/geniatagger.exe'
         dir_to_tagger = os.path.dirname(path_to_tagger)
         return subprocess.Popen(path_to_tagger, cwd=dir_to_tagger, stdin=subprocess.PIPE,
                                         stdout=subprocess.PIPE, shell=False)
