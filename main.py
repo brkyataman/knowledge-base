@@ -7,6 +7,9 @@ while True:
     userInput = input("give ur input: \n")
     if userInput == "e":
         break
-    tagger.send_message(userInput)
+    elif userInput == "s":
+        tagger.print_pos_tags()
+    else:
+        tagger.send_message(userInput)
 
 print("le finish")

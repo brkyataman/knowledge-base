@@ -5,7 +5,13 @@ from threading import Thread
 
 class GeniaTaggerClient:
 
+    _input_arr = []
+
+    def print_pos_tags(self):
+        print(self._input_arr)
+
     def send_message(self, text):
+        self._input_arr = [text]
         self._tagger.stdin.write((text + '\n').encode('utf-8'))
         self._tagger.stdin.flush()
         return True
@@ -14,7 +20,9 @@ class GeniaTaggerClient:
         while True:
             line = source.readline()
             if line:
+                line = line.rstrip().decode("utf-8")
                 buffer.append(line)
+                self._input_arr.append(line.split("\t"))
                 print(line)
             else:
                 break
