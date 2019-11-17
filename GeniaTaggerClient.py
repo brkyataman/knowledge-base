@@ -7,6 +7,9 @@ class GeniaTaggerClient:
 
     _input_arr = []
 
+    def get_tags(self):
+        return self._input_arr[1:]
+
     def print_pos_tags(self):
         print(self._input_arr)
 
