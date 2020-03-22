@@ -1,10 +1,11 @@
 from GeniaTaggerClient import GeniaTaggerClient
 import os
 from time import sleep
+import pymysql
 
 source_path = r"C:/Users/beko/Desktop/random pubmed files/"
 target_path = r"C:/Users/beko/Desktop/random pubmed files/processed"
-
+con = pymysql.connect('localhost', 'root', 'pass', 'testdb')
 
 def run():
     tagger = GeniaTaggerClient()
